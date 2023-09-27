@@ -1,7 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+languages = ["English", "Spanish", "French", "German", "Italian"]
+greetings = ["Hello", "Hola", "Bonjour", "Hallo", "Ciao"]
+
+languages.each_with_index do |lang, index|
+    Message.create(
+      language: lang,
+      greeting: greetings[index]
+    )
+  end
+
+  #wrong logic here
+# languages.each do |lang|
+#     Message.create(language: lang)
+# end
+
+# greetings.each do |greet|
+#     Message.create(greeting: greet)
+# end
+
+# run rails db:seed to add the data
